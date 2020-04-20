@@ -3,6 +3,8 @@
 * A simple translation application made with React-native.
 * Compiled only for android.
 * This application consists of 3 screens.
+### Packages
+### Screens
 
 ### Bonus
 * [x] Language selection function.
