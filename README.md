@@ -14,7 +14,7 @@ ___
 ### Packages
 
 * [react-native](https://github.com/facebook/react-native#readme)
-* [yup](github.com/jquense/yup)
+* [yup](https://github.com/jquense/yup)
 * [formik](https://github.com/bamlab/react-native-formik#readme)
 * [react-native-gravatar](https://github.com/lwhiteley/react-native-gravatar#readme)
 * [react-navigation](https://github.com/react-navigation/react-navigation#readme)
