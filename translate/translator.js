@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Picker, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Picker,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import Header from './header';
 import EditText from './editText';
 const key =
@@ -79,6 +86,14 @@ export default class translator extends Component {
         <Header title="Let's Translate !" />
         <View style={styles.content}>
           <EditText onWordChange={this.onWordChange} />
+          <View>
+            <TouchableOpacity>
+              <Image
+                style={styles.voiceButton}
+                source={require('../assets/voice.png')}
+              />
+            </TouchableOpacity>
+          </View>
 
           <Text
             // eslint-disable-next-line react-native/no-inline-styles
@@ -94,11 +109,11 @@ export default class translator extends Component {
             onValueChange={lang => this.setState({language: lang})}>
             <Picker.Item label="Turkish" value="tr" />
             <Picker.Item label="English" value="en" />
-            <Picker.Item label="Russian" value="ru" />
+            <Picker.Item label="German" value="de" />
             <Picker.Item label="French" value="fr" />
             <Picker.Item label="Spanish" value="es" />
+            <Picker.Item label="Russian" value="ru" />
             <Picker.Item label="Chineese" value="zh" />
-            <Picker.Item label="Nepali" value="ne" />
             <Picker.Item label="Greek" value="el" />
             <Picker.Item label="Japanese" value="ja" />
             <Picker.Item label="Korean" value="ko" />
@@ -169,5 +184,11 @@ const styles = StyleSheet.create({
   progressStyle: {
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  voiceButton: {
+    marginLeft: 160,
+    width: 25,
+    height: 25,
+    margin: 9,
   },
 });

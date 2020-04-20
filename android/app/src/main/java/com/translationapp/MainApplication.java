@@ -11,6 +11,7 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import com.oblador.vectoricons.VectorIconsPackage;
+import com.wenkesj.voice.VoicePackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -28,7 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           new VectorIconsPackage();
-          new RNCPickerPackage();
+          new VoicePackage();
           return packages;
         }
 

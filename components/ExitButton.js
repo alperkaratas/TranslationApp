@@ -4,18 +4,18 @@ import {withNavigation} from 'react-navigation';
 
 const ExitButton = ({goBack}) => (
   <TouchableOpacity onPress={goBack} style={styles.container}>
-    <Image style={styles.image} source={require('../assets/exitt.png')} />
+    <Image style={styles.image} source={require('../assets/exit.png')} />
   </TouchableOpacity>
 );
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    top: 495,
-    left: 153,
+    top: 515,
+    left: 310,
   },
   image: {
-    width: 60,
-    height: 60,
+    width: 33,
+    height: 33,
   },
 });
 
