@@ -26,7 +26,7 @@ ___
 <br><br>
 **2- Sign Up Screen (There is no backend connection. It has only design, routing and validation.) :**
 <br><br> 
-<img height="430" width="220" src="https://i.hizliresim.com/YafKhg.png"/>
+<img height="430" width="220" src="https://i.hizliresim.com/YafKhg.png"/> <img height="430" width="220" src="https://i.hizliresim.com/w9xrAt.png"/>
 <br><br> 
 **3- Translate Screen (Yandex translation API was used. There are 13 language options. The text in the desired language can be translated into the given languages.) :**
 <br><br> 
