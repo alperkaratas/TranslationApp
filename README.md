@@ -18,7 +18,7 @@ ___
 * [react-native-gravatar](https://github.com/lwhiteley/react-native-gravatar#readme)
 * [react-navigation](https://github.com/react-navigation/react-navigation#readme)
 * [node-error-helpers](https://github.com/Travelport-Ukraine/errors-helpers#readme)
-* [@react-native-firebase/auth](https://rnfirebase.io/auth/usage)
+* [react-native-firebase/auth](https://rnfirebase.io/auth/usage)
 ___
 ### Screens
 **1- Login Screen :**
