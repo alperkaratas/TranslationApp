@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "540040516249",
+    "firebase_url": "https://translationapp-f4c8c.firebaseio.com",
+    "project_id": "translationapp-f4c8c",
+    "storage_bucket": "translationapp-f4c8c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540040516249:android:5b6ff041a30d080eedde08",
+        "android_client_info": {
+          "package_name": "com.translationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "540040516249-jkkg1172io2oofbr8qo764cm9f74ehj6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.translationapp",
+            "certificate_hash": "043d270ac6fdfb6a89117ed1aa0c8cbfbe4bc7e7"
+          }
+        },
+        {
+          "client_id": "540040516249-jk4i848lo847b4u61qqf9ea4ctdi7v5g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9gXbwdvUBhHFbZYXr6_XL2ELIPak2gc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "540040516249-jk4i848lo847b4u61qqf9ea4ctdi7v5g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

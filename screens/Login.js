@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   View,
@@ -9,16 +9,21 @@ import {
   SafeAreaView,
   Animated,
   Easing,
+  Alert,
 } from 'react-native';
 import {Image} from 'react-native';
 import {withNavigation} from 'react-navigation';
+import auth, {firebase} from '@react-native-firebase/auth';
 
-class Login extends Component {
+class Login extends React.Component {
   state = {
     email: '',
   };
   state = {
     pass: '',
+  };
+  state = {
+    loading: false,
   };
   _onChangeMail = text => {
     this.setState({
@@ -45,9 +50,32 @@ class Login extends Component {
       useNativeDriver: true,
     }).start(() => this.spin());
   }
-
   componentDidMount() {
     this.spin();
+  }
+  onButtonPress() {
+    const {email, pass} = this.state;
+    this.setState({error: '', loading: true});
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, pass)
+      .then(this.onLoginSuccess.bind(this))
+      .catch(this.onLoginFail.bind(this));
+  }
+
+  onLoginFail() {
+    this.setState({error: 'Authentication Failed', loading: false});
+    Alert.alert('Email or password is incorrect. Try again or register !');
+  }
+
+  onLoginSuccess() {
+    this.setState({
+      email: '',
+      pass: '',
+      loading: false,
+      error: '',
+    });
+    this.props.navigation.navigate('welcome');
   }
 
   render() {
@@ -58,7 +86,6 @@ class Login extends Component {
       inputRange: [0, 1],
       outputRange: ['0deg', '360deg'],
     });
-
     return (
       <SafeAreaView style={styles.container}>
         <Animated.Image
@@ -87,7 +114,9 @@ class Login extends Component {
             onChangeText={this._onChangePass}
           />
         </KeyboardAvoidingView>
-        <TouchableOpacity onPress={() => navigate('welcome')}>
+        <TouchableOpacity
+          onPress={this.onButtonPress.bind(this)}
+          disabled={!(this.state.email && this.state.pass)}>
           <View style={styles.butonContainer}>
             <Text style={styles.butonTitle}>Login</Text>
           </View>

@@ -13,6 +13,7 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {withNavigation} from 'react-navigation';
 import BackButton from '../components/BackButton';
+import auth from '@react-native-firebase/auth';
 
 class SignUp extends Component {
   constructor(props) {
@@ -20,7 +21,6 @@ class SignUp extends Component {
     this.twoTextInputRef = React.createRef();
     this.threeTextInputRef = React.createRef();
     this.fourTextInputRef = React.createRef();
-    this.fiveTextInputRef = React.createRef();
     this.spinValue = new Animated.Value(0);
   }
 
@@ -38,9 +38,22 @@ class SignUp extends Component {
     this.spin();
   }
 
-  _handleSubmit = value => {
+  _handleSubmit = values => {
     setTimeout(() => {
-      this.props.navigation.navigate('loading');
+      auth()
+        .createUserWithEmailAndPassword(values.email, values.pass)
+        .then(() => {
+          this.props.navigation.navigate('loading');
+        })
+        .catch(error => {
+          if (error.code === 'auth/email-already-in-use') {
+            this.props.navigation.navigate('signup');
+          }
+
+          if (error.code === 'auth/invalid-email') {
+            console.log('That email address is invalid!');
+          }
+        });
     }, 100);
   };
 
@@ -54,7 +67,7 @@ class SignUp extends Component {
 
     return (
       <Formik
-        initialValues={{email: '', pass: '', telno: '', ad: '', soyad: ''}}
+        initialValues={{email: '', pass: '', telno: '', ad: ''}}
         onSubmit={this._handleSubmit}
         validationSchema={Yup.object().shape({
           email: Yup.string()
@@ -69,9 +82,6 @@ class SignUp extends Component {
             .required('This field is required'),
           ad: Yup.string()
             .max(20, 'Please enter a valid name')
-            .required('This field is required'),
-          soyad: Yup.string()
-            .max(20, 'Please enter a valid surname')
             .required('This field is required'),
         })}>
         {({
@@ -190,9 +200,6 @@ class SignUp extends Component {
                 autoCapitalize={'words'}
                 onChangeText={handleChange('ad')}
                 returnKeyType="next"
-                onSubmitEditing={() => {
-                  this.fiveTextInputRef.current.focus();
-                }}
               />
               {errors.ad && touched.ad && (
                 <Text
@@ -205,29 +212,6 @@ class SignUp extends Component {
                   {errors.ad}
                 </Text>
               )}
-              <TextInput
-                error={errors.soyad && touched.soyad}
-                ref={this.fiveTextInputRef}
-                style={styles.infoInputs}
-                keyboardType="default"
-                placeholder=" *  Surname.."
-                value={values.soyad}
-                onBlur={() => setFieldTouched('soyad')}
-                autoCapitalize={'words'}
-                onChangeText={handleChange('soyad')}
-              />
-              {errors.soyad && touched.soyad && (
-                <Text
-                  // eslint-disable-next-line react-native/no-inline-styles
-                  style={{
-                    fontSize: 10,
-                    color: '#FF3027',
-                    textAlign: 'center',
-                  }}>
-                  {errors.soyad}
-                </Text>
-              )}
-
               <Text
                 // eslint-disable-next-line react-native/no-inline-styles
                 style={{
@@ -264,7 +248,7 @@ const styles = StyleSheet.create({
   },
   singupContainer: {
     width: 300,
-    height: 380,
+    height: 310,
     backgroundColor: '#f1f1f1',
     marginHorizontal: 32,
     marginVertical: 45,
@@ -295,7 +279,7 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: '#fff',
     borderRadius: 30,
-    marginVertical: -70,
+    marginVertical: -41,
     marginHorizontal: 80,
   },
   butonText: {
