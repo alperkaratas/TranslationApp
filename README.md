@@ -4,6 +4,8 @@
 * Compiled only for android.
 * This application consists of 3 screens.
 
+___
+
 ### Bonus
 * [x] Language selection function.
 * [x] Animated app logo.
