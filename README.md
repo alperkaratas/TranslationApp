@@ -34,4 +34,4 @@ ___
 <img height="430" width="220" src="https://i.hizliresim.com/oCuzHN.png"/> <img height="430" width="220" src="https://i.hizliresim.com/4QsYos.png"/> 
 <br><br> 
 ___
-* **[MİT Licence](https://github.com/alperkaratas/TranslationApp/blob/master/LICENSE)**
+* **[MIT Licence](https://github.com/alperkaratas/TranslationApp/blob/master/LICENSE)**
