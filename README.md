@@ -7,7 +7,6 @@
 ### Bonus
 * [x] Language selection function.
 * [x] Animated app logo.
-* [ ] Speech to text.
 * [x] Login and Registration functions with Firebase. (Create user with email and pass.)
 
 ___
