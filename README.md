@@ -35,7 +35,7 @@ ___
 <br><br> 
 **3- Translate Screen (Yandex translation API was used. There are 13 language options. The text in the desired language can be translated into the given languages.) :**
 <br><br> 
-<img height="430" width="220" src="https://i.hizliresim.com/oCuzHN.png"/> <img height="430" width="220" src="https://i.hizliresim.com/4QsYos.png"/> 
+<img height="430" width="220" src="https://i.hizliresim.com/oCuzHN.png"/> <img height="440" width="220" src="https://i.hizliresim.com/4QsYos.png"/> 
 <br><br> 
 ___
 * **[MIT Licence](https://github.com/alperkaratas/TranslationApp/blob/master/LICENSE)**
