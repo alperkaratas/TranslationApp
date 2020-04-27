@@ -33,7 +33,7 @@ ___
 <br><br> 
 <img height="430" width="220" src="https://i.hizliresim.com/YafKhg.png"/> <img height="430" width="220" src="https://i.hizliresim.com/w9xrAt.png"/>
 <br><br> 
-**3- Translate Screen (Yandex translation API was used. There are 13 language options. The text in the desired language can be translated into the given languages.) :**
+**3- Translate Screen ([Yandex translation API](https://tech.yandex.com/translate/) was used. There are 13 language options. The text in the desired language can be translated into the given languages.) :**
 <br><br> 
 <img height="430" width="220" src="https://i.hizliresim.com/oCuzHN.png"/> <img height="430" width="220" src="https://i.hizliresim.com/4QsYos.png"/> 
 <br><br> 
